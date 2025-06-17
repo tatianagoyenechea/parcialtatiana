@@ -1,0 +1,65 @@
+Mejoras realizadas en el proyecto
+
+En esta segunda entrega apliqué varias mejoras respecto al primer parcial. Lo primero fue reorganizar la estructura de los archivos, dejando todo en la raíz del proyecto para facilitar el despliegue, especialmente pensando en plataformas como Netlify.
+Trabajé el diseño usando Flexbox y Tailwind CSS para lograr un sitio responsive que se adapte bien a distintos dispositivos.
+Agregué un menú de navegación fijo que se mantiene igual en todas las páginas, lo cual mejora la experiencia de usuario. También incorporé una nueva sección para la materia Diseño y Desarrollo Web, con la información de las UVAs, las fechas de los parciales y la bibliografía.
+Además, cuidé la semántica del código HTML usando etiquetas como header, main, section y footer, y sumé validación de formulario con JavaScript puro (sin usar jQuery).
+Finalmente, incluí un logo en la barra de navegación para darle mi propio estilo personalizado y profesional al sitio.
+
+Código JavaScript utilizado
+
+Agregué una validación básica para el formulario de contacto, para evitar que se envíe si los campos obligatorios están vacíos. El código es el siguiente:
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formContacto");
+
+  if (form) {
+    form.addEventListener("submit", function(event) {
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      if (nombre === "" || email === "" || mensaje === "") {
+        alert("Por favor complete todos los campos obligatorios.");
+        event.preventDefault();
+      }
+    });
+  }
+});
+Esta validación se activa al hacer submit, y si algún campo obligatorio está vacío, muestra un mensaje de alerta y no permite que se envíe el formulario.
+
+Resultados del test de accesibilidad con Lighthouse
+
+Realicé el test con Lighthouse desde Chrome sobre el sitio desplegado y obtuve estos resultados:
+
+Performance: 99
+Accessibility: 100
+Best Practices: 100
+SEO: 100
+Se cumplieron todos los principales criterios de accesibilidad, queda adjuntado en la imagen: lighthouse.png
+
+
+Uso de etiquetas alt descriptivas en imágenes.
+Contrastes de colores correctos.
+Formulario accesible con etiquetas label asociadas.
+Navegación clara, simple y coherente en todas las páginas.
+Estructura HTML semántica.
+(Adjunto la captura del reporte Lighthouse como parte de la entrega.)
+
+Principios de Nielsen aplicados
+
+Apliqué varios de los principios de usabilidad de Nielsen:
+
+Visibilidad del estado del sistema: El formulario muestra alertas si falta completar campos.
+Consistencia y estándares: Todas las páginas mantienen el mismo diseño y menú.
+Prevención de errores: Validación de los datos antes de enviar el formulario.
+Reconocer antes que recordar: Los enlaces tienen nombres descriptivos, no es necesario memorizar.
+Flexibilidad y eficiencia de uso: El sitio es responsive, funciona bien en distintos dispositivos.
+Diseño estético y minimalista: La interfaz es simple, limpia y sin elementos que distraigan.
+Mejoras de accesibilidad específicas
+
+Se usaron colores accesibles.
+Fuentes grandes y legibles.
+Formulario correctamente etiquetado.
+Diseño responsive pensado para celular y PC.
+Código semántico para facilitar navegación de personas con lector de pantalla.
