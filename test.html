@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba de Modo Oscuro</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <header class="bg-purple-700 dark:bg-purple-900 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">Prueba</h1>
+    <button id="modo-btn" class="bg-white text-purple-700 dark:bg-gray-800 dark:text-white px-4 py-2 rounded-lg">
+      🌙 Modo oscuro
+    </button>
+  </header>
+
+  <main class="p-8">
+    <h2 class="text-3xl font-bold mb-4">Contenido de Prueba</h2>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <p>Este es un panel que debería cambiar de color.</p>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modoBtn = document.getElementById('modo-btn');
+      const body = document.body;
+
+      // Función para aplicar el tema actual
+      const aplicarTema = (tema) => {
+        if (tema === 'dark') {
+          body.classList.add('dark');
+          modoBtn.textContent = '☀️ Modo claro';
+        } else {
+          body.classList.remove('dark');
+          modoBtn.textContent = '🌙 Modo oscuro';
+        }
+      };
+
+      // Evento de clic para cambiar el tema
+      modoBtn.addEventListener('click', () => {
+        const esModoOscuro = body.classList.toggle('dark');
+        const nuevoTema = esModoOscuro ? 'dark' : 'light';
+        localStorage.setItem('theme', nuevoTema);
+        aplicarTema(nuevoTema);
+      });
+
+      // Aplicar el tema guardado al cargar la página
+      const temaGuardado = localStorage.getItem('theme') || 'light';
+      aplicarTema(temaGuardado);
+    });
+  </script>
+
+</body>
+</html>
