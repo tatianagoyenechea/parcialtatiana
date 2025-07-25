@@ -107,3 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const temaGuardado = localStorage.getItem('theme') || 'light';
   aplicarTema(temaGuardado);
 });
+
