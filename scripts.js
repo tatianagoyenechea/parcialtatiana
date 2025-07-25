@@ -108,3 +108,16 @@ document.addEventListener("DOMContentLoaded", () => {
   aplicarTema(temaGuardado);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  // ... (Tu código existente para el formulario y modo oscuro) ...
+
+  // --- LÓGICA DEL MENÚ HAMBURGUESA ---
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (navToggle && navMenu) { // Verificar si los elementos existen
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden'); // Alterna la clase 'hidden' para mostrar/ocultar el menú
+    });
+  }
+});
