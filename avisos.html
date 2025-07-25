@@ -9,8 +9,8 @@
   <script defer src="scripts.js"></script>
 </head>
 
-<body class="bg-[#f5f5f5] flex flex-col min-h-screen">
 
+<body class="bg-[#f5f5f5] flex flex-col min-h-screen transition-opacity duration-500 opacity-0" onload="document.body.style.opacity='1'">
   <!-- NAVBAR -->
   <header class="bg-purple-700 text-white py-4">
     <div class="container mx-auto flex justify-between items-center px-4">
@@ -19,6 +19,7 @@
         <h1 class="text-xl font-bold">Tatiana Goyenechea | Mi Cursada 2025</h1>
       </div>
       <nav class="flex space-x-6">
+        <a href="index.html" class="hover:text-purple-300">Inicio</a>
         <a href="avisos.html" class="hover:text-purple-300">Avisos</a>
         <a href="sobremi.html" class="hover:text-purple-300">Sobre mí</a>
         <a href="materias2025.html" class="hover:text-purple-300">Materias 2025</a>
